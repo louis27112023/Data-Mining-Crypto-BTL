@@ -1,0 +1,38 @@
+project:
+  name: "Cryptocurrency Data Mining Project"
+  author: "Group"
+  seed: 42
+
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  models_dir: "outputs/models"
+  outputs_figures: "outputs/figures"
+  outputs_tables: "outputs/tables"
+
+data:
+  # Để "all" để hệ thống tự động tải TẤT CẢ các file .csv có trong thư mục data/raw
+  coins: "all"
+  
+  date_col: "Date"
+  start_date: "2018-01-01"
+  end_date: "2021-07-06"
+  target_col: "Close"
+
+features:
+  rolling_windows: [7, 14, 30]
+  lag_days: [1, 3, 7]
+  
+mining:
+  association:
+    min_support: 0.1
+    min_confidence: 0.5
+  clustering:
+    n_clusters: 4
+    features_to_cluster: ["Close_Return", "Volatility_7d", "Volume_Ratio"]
+
+modeling:
+  forecasting:
+    train_split: 0.8
+    test_split: 0.2
+    model_type: "ARIMA"   # Có thể là ARIMA, HoltWinters

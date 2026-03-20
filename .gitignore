@@ -1,0 +1,41 @@
+# Môi trường ảo (Tuyệt đối không đẩy lên Git)
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# File ẩn hệ thống và bộ nhớ Cache
+.DS_Store
+.vscode/
+
+# Thư mục lưu Model dung lượng lớn (Nếu có)
+# Nhưng giữ lại thư mục rỗng và ảnh báo cáo
+outputs/models/*.pkl
+outputs/models/*.joblib
+outputs/models/*.h5
+
+# Các file Script viết nháp, fix lỗi
+patch_nb*
+fix_nb*
+clean_trash*
+create_nb*
+split_nb*
+get_stats*
+auto_find_and_copy*
+move_data*
+setup_folders*
+run_with_log*
+test_loader*
+read_docx*
+fix_regime*
+docx_output.txt
+data_stats.txt
+
+# Dữ liệu Báo cáo Word (Dung lượng lớn có thể ẩn đi tuỳ ý)
+*.docx
+~$*.docx
+*.bak
+*.tmp
